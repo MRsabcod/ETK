@@ -3,7 +3,7 @@ import pool from '../config/db.js'
 const custQueriesRouter = express.Router()
 custQueriesRouter.get('/', async (req, res) => {
     try {
-        const data=await pool.query('SELECT * FROM cust_queries ORDER BY  DESC')
+        const data=await pool.query('SELECT * FROM cust_queries ')
         res.status(200).send(data.rows)
     } catch (e) {
         console.error(e)
